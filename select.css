@@ -61,3 +61,19 @@ h2 {
     font-family: 'Roboto Condensed', Times, serif;
     font-size: 50px;
 }
+
+/* -----footer----- */
+
+footer {
+    width: cover;
+    background-color: black;
+    padding: 40px 0px; 
+}
+
+footer p{
+    font-family: 'News Cycle', sans-serif;
+    font-weight: 200;
+    font-size: 17px; 
+    color:#dae3e9;
+    text-align: center;
+}
