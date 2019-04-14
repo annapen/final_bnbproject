@@ -65,6 +65,43 @@ function displayLogoImage(restaurants, val) {
     }
   }
   let displayInstructions = document.getElementById('select-message')
+
+// push new instances/objects into the restaurant Array
+restaurantArray.push(BibiBop, Chipotle, Cesco, GringoMariachi, Jaleo, Tandoori, LaMadeleine, HanaroSushi, MamaLucia, MannyOlga, MonAmi, Olazzo, Panetteria, Raku, UncleJulios, LeVieux)
+
+//pulls data from the radio button inputs 
+let cusineSelectors = document.querySelectorAll('input')
+
+//declared function to select cuisine options by clicking one of the four radio button selectors
+function restaurantSelector(clickedElements, restaurants){
+    for (let restaurant of restaurants){
+        for (let clickedElement of clickedElements){
+            clickedElement.addEventListener('click', function(event){
+                if (event.currentTarget.value === restaurant.cuisine){
+                    elImageContainer.innerHTML ==  ' '
+                    displayLogoImage( restaurants, clickedElements)
+                }
+                clickedRestaurantLogo(restaurants, elImageContainer.childNodes)
+            })
+        }
+    }
+}
+
+// Render the logo images based on the selected restaurant category
+function discplayLogoImage(restaurant, val){
+    for(restaurant of restaurants){
+        let logo = document.createElement('img')
+        if(restaurant.cuisine === val){
+            logo.name = restaurant.name
+            logo.src = restaurant.logoPath
+            elImageContainer.appendChild(logo)
+        } 
+    }
+}
+
+
+
+let displayInstructions = document.getElementById('select-message'),
   //Create values for established DOM element with instructions
     //Display instructions for logo selection
     displayInstructions.innerText = ('Select your desired dining option')
